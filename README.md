@@ -1,5 +1,5 @@
 # KDU-Library-Assistant-Chatbot
-KDU Library Assistant Chatbot using Rasa, MongoDB, HTML/CSS/JS
+### KDU Library Assistant Chatbot using Rasa, MongoDB, HTML/CSS/JS
 
 # Setup chatbot
 ### 1. Create new project and virtual environment in your IDE
@@ -28,7 +28,7 @@ rasa shell
 rasa run actions 
  ```
 
-# To run  chatbot in GUI application(socketio)
+# To run  chatbot in GUI application (socketio)
 
 ### Run follwing command in terminal 
 ```
