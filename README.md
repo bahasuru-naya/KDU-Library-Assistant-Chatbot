@@ -10,7 +10,7 @@
 ```
 pip install -r requirements.txt
  ```
-### 5. Next create new rasa chatbot using following coomand
+### 5. Next create new rasa chatbot using following command in terminal
 ```
 rasa init
  ```
@@ -32,7 +32,7 @@ rasa run actions
 
 # To run  chatbot in GUI application (socketio)
 
-### Run follwing command in terminal 
+### 1. Run follwing command in terminal 
 ```
 rasa run -m models --enable-api --cors "*"
  ```
@@ -40,5 +40,5 @@ rasa run -m models --enable-api --cors "*"
 rasa run actions 
  ```
 
-### After loading server open 'chatbot.html' in 'forntend' folder
+### 2. After loading server open 'chatbot.html' in 'forntend' folder
 
