@@ -38,5 +38,5 @@ rasa run -m models --enable-api --cors "*"
 rasa run actions 
  ```
 
-### After loading server open index.html in forntend folder
+### After loading server open chatbot.html in forntend folder
 
