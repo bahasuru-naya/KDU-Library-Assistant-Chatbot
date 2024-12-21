@@ -1,8 +1,9 @@
 # KDU-Library-Assistant-Chatbot
 ### KDU Library Assistant Chatbot using Rasa, MongoDB, HTML/CSS/JS
+### Data which use to craete database are found in 'Book.book_data.csv' in 'data' folder 
 
 # Setup chatbot
-### 1. Download or clone repository into your pc
+### 1. Download or clone repository into your PC
 ### 2. Create new project and virtual environment in your IDE
 ### 3. Then copy 'requirements.txt' file to your project directory
 ### 4. Go to the project directory in terminal then run following command to install dependencies in project
@@ -39,5 +40,5 @@ rasa run -m models --enable-api --cors "*"
 rasa run actions 
  ```
 
-### After loading server open chatbot.html in forntend folder
+### After loading server open 'chatbot.html' in 'forntend' folder
 
