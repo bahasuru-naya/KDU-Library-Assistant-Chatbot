@@ -1,0 +1,979 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: ask_description
+  examples: |
+    - Can you give me the description of [Spider's Web](book_name)?
+    - What's the description of [The One Tree](book_name)?
+    - I want to know about [Rage of angels](book_name).
+    - Describe [The Four Loves](book_name).
+    - Tell me about the book [The Problem of Pain](book_name).
+    - Give me the details of [Empires of the Monsoon](book_name).
+    - What is [Well of Darkness](book_name) about?
+    - Can you summarize [The Mad Ship](book_name) for me?
+    - Please provide the description of [Post Captain](book_name).
+    - What can you tell me about [Gravity](book_name)?
+
+- intent: ask_book_cover
+  examples: |    
+    - Show me the cover of [The One Tree](book_name)
+    - Can you display the book cover of [Spider's Web](book_name)?
+    - I want to see the cover of [Rage of angels](book_name)
+    - What does the cover of [1984](book_name) look like?
+    - Do you have the book cover for [To Kill a Mockingbird](book_name)?
+    - Get me the cover of [The Great Gatsby](book_name)
+    - Please show the cover of [The Catcher in the Rye](book_name)
+    - Show book cover for [War and Peace](book_name)
+    - Find the cover of the book [Moby Dick](book_name)
+    - Can I see the cover of [The Alchemist](book_name)?
+    - Show the picture of the book cover of [Crime and Punishment](book_name)
+    - What’s the cover of [The Lord of the Rings](book_name)?
+    - Display the cover image of [Brave New World](book_name)
+    - Find and show the cover for [Don Quixote](book_name)
+    - Could you provide the cover for [Animal Farm](book_name)?
+    - Let me see the cover of [Jane Eyre](book_name)
+    - Tell me how the cover of [Wuthering Heights](book_name) looks
+    - Do you have the image of the cover for [The Odyssey](book_name)?
+
+- intent: ask_num_pages
+  examples: |
+    - How many pages does [The Great Gatsby](book_name) have?
+    - What is the page count of [1984](book_name)?
+    - Tell me the number of pages in [Pride and Prejudice](book_name)
+    - How long is [Moby Dick](book_name)?
+    - What’s the total number of pages in [The Catcher in the Rye](book_name)?
+    - What’s the number of pages in [The Hobbit](book_name)
+    - How many pages are there in [War and Peace](book_name)?
+    - Could you tell me the page count of [The Lord of the Rings](book_name)?
+    - Do you know the number of pages in [Jane Eyre](book_name)?
+    - I want to know the page count for [Anna Karenina](book_name)
+    
+- intent: ask_ratings
+  examples: |
+    - What is the rating of [Gilead](book_name)?
+    - What is the rating of [Moby Dick](book_name)
+    - Can you tell me the average rating of [To Kill a Mockingbird](book_name)?
+    - What’s the rating for [The Alchemist](book_name)?
+    - How is [Wuthering Heights](book_name) rated?
+    - Tell me the ratings of [Brave New World](book_name)
+    - Do you know the average rating of [Little Women](book_name)?
+    - What are the reviews like for [The Scarlet Letter](book_name)?
+    - How do people rate [The Divine Comedy](book_name)?
+    - What’s the Goodreads rating for [Les Misérables](book_name)?
+
+- intent: ask_published_year
+  examples: |
+    - When was [Where Rainbows End](book_name) published?
+    - What is the publication year of [Pride and Prejudice](book_name)?
+    - When did [The Great Gatsby](book_name) come out?
+    - Tell me the published year of [The Catcher in the Rye](book_name)
+    - Can you tell me when [Moby Dick](book_name) was released?
+    - Do you know the year [War and Peace](book_name) was published?
+    - What’s the publication year for [Jane Eyre](book_name)?
+    - In what year was [Anna Karenina](book_name) published
+    - When was the book [The Hobbit](book_name) first printed?
+    - tell me when [Moby Dick](book_name) was released
+
+- intent: ask_author
+  examples: |
+    - Who wrote [The Four Loves](book_name)?
+    - Can you tell me the author of [Pride and Prejudice](book_name)?
+    - Who is the author of [The Great Gatsby](book_name)?
+    - Do you know who wrote [The Catcher in the Rye](book_name)?
+    - Tell me the name of the author of [Moby Dick](book_name)
+    - Who’s the writer of [War and Peace](book_name)?
+    - Can you give me the author of [Jane Eyre](book_name)?
+    - Who is the writer behind [Anna Karenina](book_name)?
+    - Who’s the author of the book [The Hobbit](book_name)?
+    - Can you tell me who authored [Moby Dick](book_name)?
+
+- intent: ask_book_availability
+  examples: |
+    - Is [Harry Potter](book_name) available?
+    - Do you have [The Great Gatsby](book_name)?
+    - Can I borrow [To Kill a Mockingbird](book_name)?
+    - Is [1984](book_name) borrowed or not?
+    - Is [Pride and Prejudice](book_name) currently available?
+    - Do you know if [The Catcher in the Rye](book_name) is available?
+    - Is the book [The Alchemist](book_name) available to borrow?
+    - Is [Moby Dick](book_name) borrowed?
+    - Is [War and Peace](book_name) in stock?
+    - Can I check if [The Lord of the Rings](book_name) is available?
+
+- lookup: book_name
+  examples: |    
+    - Gilead
+    - Spider's Web
+    - The One Tree
+    - Rage of angels
+    - The Four Loves
+    - The Problem of Pain
+    - An Autobiography
+    - Empires of the Monsoon
+    - The Gap Into Madness
+    - Master of the Game
+    - If Tomorrow Comes
+    - Assassin's Apprentice
+    - Warhost of Vastmark
+    - The Once and Future King
+    - Murder in LaMut
+    - Jimmy the Hand
+    - Well of Darkness
+    - Witness for the Prosecution & Selected Plays
+    - The Little House
+    - Mystical Paths
+    - Glittering Images
+    - Glamorous Powers
+    - The Mad Ship
+    - Post Captain
+    - The Reverse of the Medal
+    - Miss Marple
+    - The Years of Rice and Salt
+    - Spares
+    - Gravity
+    - The Wise Woman
+    - Girls' Night in
+    - The White Album
+    - The Bonesetter's Daughter
+    - The Lexus and the Olive Tree
+    - Hercule Poirot's Christmas
+    - The Big Four
+    - The Thirteen Problems
+    - They Do it with Mirrors
+    - A Murder is Announced
+    - The Mirror Crack'd from Side to Side
+    - Mrs McGinty's Dead
+    - Taken at the Flood
+    - The Hollow
+    - Third Girl
+    - The Secret of Chimneys
+    - The Lord of the Rings
+    - The Metaphysical Club
+    - The illustrated man
+    - Wilkins' Tooth
+    - Cut
+    - The Lord of the Rings    
+    - The Fellowship of the Ring
+    - Lirael
+    - Tales from the Perilous Realm
+    - Breaking Open the Head
+    - The Yiddish Policemen's Union
+    - Beware, Princess Elizabeth
+    - The Family Way
+    - Endless Night
+    - How to be Alone
+    - The Mysterious Mr. Quin
+    - The Listerdale Mystery
+    - The Real Trial of Oscar Wilde
+    - I Can Read with Me Eyes Shut!
+    - Oh, the Places You'll Go!
+    - If I Die in a Combat Zone
+    - The Return of the King
+    - The Silmarillion
+    - I Wish that I Had Duck Feet
+    - Oh Say Can You Say?
+    - There's a Boy in the Girls' Bathroom
+    - Microserfs
+    - Miss Wyoming
+    - Where Rainbows End
+    - Poirot
+    - The Art of The Lord of the Rings
+    - The Known World       
+    - Tropic of Cancer
+    - Close Range
+    - The Love of the Last Tycoon
+    - The Song of Rhiannon
+    - Heart Songs and Other Stories
+    - The voyage of the Dawn Treader    
+    - The Short Stories of Ernest Hemingway    
+    - Reason in History
+    - The Elements of Style
+    - The Presocratics
+    - Spandau
+    - The Rumble Seat Pony
+    - The Journey with Grandmother
+    - Tyranny of the Majority
+    - The Origins of the Civil Rights Movement
+    - Presidential Power and the Modern Presidents
+    - Rest, Rabbit, Rest
+    - Where the Red Fern Grows
+    - Poppy's Return
+    - Diary of a Spider
+    - An Old-Fashioned Thanksgiving
+    - The Paradox of Choice
+    - How to Read Literature Like a Professor
+    - The Amazing Maurice and His Educated Rodents
+    - The Wee Free Men
+    - Going Postal
+    - Modern Mind
+    - She Went All the Way
+    - Island
+    - A Year in the Life of William Shakespeare
+    - Lucy Sullivan Is Getting Married
+    - The Terminal Man
+    - The Art of the Novel
+    - The Bromeliad Trilogy
+    - Merry Christmas, Amelia Bedelia
+    - Identity
+    - The thief of always
+    - The Illustrated Alchemist
+    - Mars and Venus Book of Days
+    - The Last of the Really Great Whangdoodles
+    - Today I Feel Silly & Other Moods That Make My Day
+    - The Missing Piece Meets the Big O
+    - Lafcadio, the Lion Who Shot Back
+    - The Secret Garden Cookbook
+    - Laura's Album
+    - Quivers
+    - Moonspinners
+    - Small Wonder
+    - Worlds Enough & Time
+    - The Cheese Monkeys
+    - Travels
+    - Caesar
+    - The Forever War
+    - Amelia Bedelia Goes Camping
+    - The Secret Sister
+    - Amelia Bedelia Helps Out
+    - Whirlpool
+    - Teach Us, Amelia Bedelia
+    - Cryptonomicon
+    - Falling Up
+    - Anansi Boys
+    - Fragile Things
+    - What Went Wrong?
+    - Letters from the Earth
+    - Savannah Blues
+    - The Whipping Boy
+    - The Innovator's Dilemma
+    - A Nose for Murder
+    - Happiness
+    - Size 12 Is Not Fat
+    - Warrior of the Light
+    - The Devil and Miss Prym
+    - The Big Bing
+    - One Hundred Years of Solitude
+    - Walt Whitman    
+    - The Outsider    
+    - The Andromeda Strain
+    - Congo
+    - Johnny and the Dead
+    - Amelia Bedelia 40th Anniversary Collection
+    - The Girls of Lighthouse Lane #3
+    - The Bradbury Chronicles
+    - Three Rotten Eggs
+    - The Wicked Day
+    - The Game
+    - Gold
+    - The Kindness of Strangers
+    - Built to Last
+    - Fluke
+    - Lord of Light
+    - The Perennial Philosophy
+    - A Crack in the Edge of the World
+    - Dead Witch Walking
+    - The Good, the Bad, and the Undead
+    - Men Are from Mars, Women Are from Venus
+    - Sabriel (adult)
+    - Slouching Toward Nirvana
+    - Bad Childhood---Good Life
+    - Cat Cross Their Graves
+    - Cat Breaking Free
+    - Slider
+    - The Black Dahlia Files
+    - Metro Girl
+    - Motor Mouth
+    - Mystic River
+    - Great Short Works of Herman Melville
+    - The Day I Swapped My Dad for Two Goldfish
+    - Eleven Minutes
+    - Zen and the Art of Motorcycle Maintenance
+    - Ulysses S. Grant
+    - A Dirty Job
+    - Quicksilver
+    - Every Book Its Reader
+    - Flirting With Danger
+    - Lost Horizon
+    - The Doors of Perception and Heaven and Hell
+    - Thanksgiving
+    - Love Overboard
+    - Back to the Bedroom
+    - The Rocky Road to Romance
+    - Thomas Jefferson
+    - Muhammad
+    - Meeting Jesus Again for the First Time
+    - Reading the Bible Again for the First Time
+    - Shadow of the Almighty
+    - The Dance of the Dissident Daughter
+    - C.S. Lewis
+    - The Screwtape Letters
+    - Mere Christianity
+    - Learning to Love
+    - The Mediator #4: Darkest Hour
+    - Cash    
+    - Touching the Void
+    - Anybody Out There?
+    - My Little Pony: Hide-and-Seek
+    - The Confusion
+    - Bridge to Terabithia (rack)
+    - Practical Demonkeeping
+    - Island of the Sequined Love Nun
+    - The Lust Lizard of Melancholy Cove
+    - Weetzie Bat
+    - Behind the Curtain
+    - Catherine, Called Birdy (Summer Reading Edition)
+    - Wicked Musical Tie-in Edition
+    - Son of a Witch
+    - This Rough Magic
+    - Airs Above the Ground
+    - The Mediator #5: Haunted
+    - Beauty
+    - Mating in Captivity
+    - Forgotten New York
+    - The Dead Beat
+    - Charms for the Easy Life
+    - The Reading Group
+    - A Couple of April Fools
+    - What Christians Believe
+    - Psyche in a Dress    
+    - A Quick Bite
+    - Goodnight Moon 60th Anniversary Edition
+    - Brave New World and Brave New World Revisited
+    - The Final Solution
+    - The Cat's Pajamas
+    - Holy Skirts
+    - Time For Kids: Butterflies!
+    - A False Mirror
+    - Cracks in My Foundation
+    - A Fistful of Charms
+    - For a Few Demons More
+    - Mysteries of Pittsburgh
+    - Everything Is Illuminated tie-in
+    - Flight of the Nighthawks
+    - Into a Dark Realm    
+    - The Best American Crime Writing 2006
+    - Last of the Wilds
+    - Voice of the Gods
+    - Missing Mom
+    - The Collected Letters of C.S. Lewis, Volume 3
+    - Touch Not the Cat
+    - King of the Vagabonds
+    - Odalisque
+    - Black Boy
+    - The Sheltering Sky
+    - Rat Bastards
+    - The Last Days of Henry VIII
+    - The Thorn Birds
+    - Krakatoa
+    - The Professor and the Madman
+    - Hit Parade
+    - Curtain
+    - A Hard Day's Write, 3e
+    - The Lion, the Witch and the Wardrobe Read-Aloud Edition
+    - Mambo Kings Play Songs of Love, The Tie-in    
+    - Animal, Vegetable, Miracle
+    - Good Omens
+    - Dates From Hell
+    - Continental Drift
+    - The Burglar Who Thought He Was Bogart
+    - Next
+    - How to Be Popular
+    - The Annotated Charlotte's Web
+    - Charlotte's Web: Wilbur Finds a Friend
+    - The Autumn of the Patriarch
+    - How to Make Money Like a Porn Star
+    - Little House in the Big Woods
+    - Farmer Boy
+    - The Long Winter
+    - Little Town on the Prairie
+    - The First Four Years
+    - The Alchemist - Gift Edition
+    - Pretty Things
+    - Eaters of the Dead
+    - Genome
+    - The Zero
+    - Kitchen Confidential Updated Ed
+    - DREAM & THE UNDERWOR
+    - The Crying of Lot 49
+    - An American Childhood
+    - Teaching a Stone to Talk
+    - Holy the Firm
+    - Think on These Things
+    - The Dance of Intimacy
+    - Tell My Horse
+    - Jonah's Gourd Vine
+    - The Chaneysville Incident
+    - The Writing Life
+    - The Lost Continent
+    - Three by Annie Dillard
+    - Declarations of Independence
+    - The Complete Stories
+    - Legends, Lies & Cherished Myths of World History
+    - The Infinite Plan
+    - Soul Mates
+    - Cathedral, Forge and Waterwheel    
+    - Success Stories
+    - Testaments Betrayed
+    - Mr. Ives' Christmas
+    - Slowness
+    - As Nature Made Him
+    - The Active Side of Infinity
+    - Brave New World
+    - You Can't Go Home Again
+    - The Fifth Mountain    
+    - Identity
+    - The Poisonwood Bible
+    - Cloudsplitter
+    - Plato, Not Prozac!
+    - The Crying of Lot 49
+    - The Map That Changed the World
+    - The Odyssey of Homer
+    - Collected Novellas
+    - Collected Stories
+    - A Mulligan for Bobby Jobe
+    - In the Footsteps of Mr. Kurtz
+    - Every Tongue Got to Confess
+    - Kitchen Confidential
+    - One Matchless Time
+    - The Girl in the Glass
+    - The Best American Science Writing 2002
+    - Wittgenstein's Poker
+    - Smart Discipline(R)
+    - The Schopenhauer Cure
+    - African Nights
+    - The Autobiography of Mark Twain
+    - Joy in the Morning
+    - Beauty
+    - The Darling
+    - The Making of a Philosopher
+    - The Language Instinct
+    - Prodigal Summer
+    - Tales of the City
+    - Fear of Falling
+    - The Hidden Hand
+    - Europe
+    - Savage Inequalities
+    - Gold Bug Variations
+    - Three Farmers on Their Way to a Dance    
+    - Fiskadoro
+    - The Stars at Noon
+    - Operation Wandering Soul
+    - Reasons to Live
+    - Prisoner's Dilemma
+    - The God of Small Things
+    - Courtesans and Fishcakes
+    - Girlfriend in a Coma
+    - The Long Hard Road Out of Hell
+    - Confessions of an Ugly Stepsister
+    - The Dirt
+    - Life Is Elsewhere
+    - Cat Laughing Last
+    - The Crow: The Lazarus Heart
+    - Well of Darkness
+    - The Light Fantastic
+    - U.S.S. Seawolf
+    - Realms of Dragons
+    - The Player of Games
+    - My Soul to Keep
+    - Peril's Gate
+    - Fugitive Prince
+    - Love in Vein
+    - Cat on the Edge
+    - Cat in the Dark
+    - Treasure Box
+    - Homebody
+    - Imajica II
+    - Choke
+    - Dirt
+    - Kilo Class
+    - Their Eyes Were Watching God
+    - A Tree Grows in Brooklyn
+    - One Hundred Years of Solitude
+    - Daughter of Fortune
+    - By the River Piedra I Sat Down and Wept
+    - The Alchemist
+    - Veronika Decides to Die
+    - Goodnight Moon 123
+    - Charlotte's Web Signature Edition
+    - By Myself and Then Some
+    - The Art of Loving
+    - Factotum tie-in
+    - The White Masai
+    - Mandy
+    - The Crusader
+    - Spider's House
+    - Days
+    - Howl
+    - Coraline
+    - Points in Time
+    - At the Edge
+    - Remind Me Again Why I Need A Man
+    - Stardust
+    - When the Heart Waits
+    - The Gabriel Hounds
+    - The Pact
+    - The Known World
+    - Ines of My Soul LP
+    - Women
+    - Smithsonian Intimate Guide to Human Origins
+    - My secret    
+    - The End of Days
+    - The Blue and Brown Books
+    - Owning Your Own Shadow
+    - The World's Religions    
+    - A Manual for Living
+    - The Pilgrimage
+    - The Valkyries
+    - Rainforest Home Remedies
+    - A Circle of Quiet
+    - Bulfinch's Mythology
+    - Romanticism
+    - Betsy-Tacy
+    - Betsy and Tacy Go Over the Big Hill
+    - Heaven to Betsy
+    - Let the Hurricane Roar
+    - The Wish Giver
+    - Racso and the Rats of NIMH
+    - Child of the Owl    
+    - The Rainbow People
+    - Dragon's Gate
+    - Betsy's Wedding
+    - Betsy and the Great World
+    - Betsy and Joe
+    - Betsy Was a Junior
+    - Crazy Lady!   
+    - Strawberry Girl 60th Anniversary Edition
+    - Seven Spiders Spinning
+    - American Dragons
+    - The Midwife's Apprentice (rpkg)
+    - Winter on the Farm
+    - Down to the Bonny Glen
+    - Monster
+    - Emily of Deep Valley
+    - The Trumpet of the Swan
+    - The Good Liar
+    - Old Town in the Green Groves
+
+- intent: ask_book_recommendation_with_category
+  examples: |
+    - Can you recommend a book in [fiction](book_category)?
+    - Suggest me a book from [non fiction](book_category).
+    - What’s a great book in the [educational](book_category) genre?
+    - Do you have any recommendations for [art](book_category) books?
+    - Can you suggest a [comics](book_category) novel for me?
+    - What are some good books in the [lifestyle](book_category) category?
+    - Can you recommend a [religious](book_category) book for me?
+    - What’s the best [fiction](book_category) book you have?
+    - Any suggestions for a good [technology](book_category) novel?
+    - Could you recommend a [educational](book_category) book to read?
+    - Do you have any [poetry](book_category) books you’d suggest?
+    - Can you recommend a [art](book_category) book?
+    - What are some good [children](book_category) books?
+    - Can you suggest a book in [technology](book_category)?   
+
+- lookup: book_category
+  examples: |
+    - fiction
+    - non fiction
+    - children
+    - educational
+    - religious 
+    - art 
+    - comics 
+    - poetry 
+    - lifestyle 
+    - technology 
+    
+
+- intent: ask_book_by_author
+  examples: |
+    - What book did [Charles Todd](book_author) write?
+    - Can you tell me a book by [Joe Simpson](book_author)?
+    - Which book is authored by [Arundhati Roy](book_author)?
+    - Do you know a book written by [Maud Hart Lovelace](book_author)?
+    - Tell me the name of a book by [Douglas Coupland](book_author).
+    - What is a book written by [Simon Winchester](book_author)?
+    - Can you give me the title of a book by [C. S. Lewis](book_author)?
+    - Which book is written by [Tim O'Brien](book_author)?
+    - Name a book authored by [Steve Turner](book_author).
+    - Do you know a title by [Huston Smith](book_author)?
+    - What’s a book by [Jane Leslie Conly](book_author)?
+    - Tell me a work of [Georg Wilhelm Friedrich Hegel](book_author).
+    - Can you list a book from [Larry Koenig](book_author)?
+    - What book did [Jonathan Safran Foer](book_author) write?
+    - Do you know a book by [Howard Zinn](book_author)?
+    - Can you name a book written by [Aldon D. Morris](book_author)?
+
+
+- lookup: book_author
+  examples: |  
+    - Charles Todd
+    - Joe Simpson
+    - Arundhati Roy
+    - Maud Hart Lovelace
+    - Douglas Coupland
+    - Simon Winchester    
+    - C. S. Lewis
+    - Tim O'Brien
+    - Steve Turner    
+    - Huston Smith
+    - Jane Leslie Conly
+    - Georg Wilhelm Friedrich Hegel
+    - Larry Koenig    
+    - Jonathan Safran Foer
+    - Howard Zinn
+    - Aldon D. Morris
+    - E. B. White    
+    - Agatha Christie
+    - R.L. Stine
+    - Neal Stephenson
+    - Ernest Hemingway
+    - Homer
+    - Laurence Yep
+    - Patrick Robinson
+    - Trudi Canavan
+    - Clayton M. Christensen    
+    - Merlin Holland
+    - Shirley Rousseau Murphy
+    - Karen Armstrong
+    - Richard Hall
+    - Norman Davies
+    - Michael Chabon   
+    - Gary Russell
+    - Ludwig Wittgenstein
+    - Justin Kaplan
+    - Charles Neider
+    - Louis Menand
+    - Margaret Wise Brown
+    - Cecelia Ahern    
+    - Jodi Picoult
+    - Frank Warren
+    - Michael Marshall Smith
+    - Robin Quivers
+    - Neil Strauss;Bernard Chang
+    - Liz Goldwyn
+    - Thomas Moore
+    - Paulo Coelho
+    - Lauren Bacall
+    - Albert Speer
+    - Thomas Wolfe
+    - Melissa Wiley
+    - Claudia Carroll
+    - Milan Kundera
+    - Patrick O'Brian
+    - Dennis Lehane
+    - Rene Steinke
+    - Marilyn Johnson
+    - Harper Lee
+    - Katrina Kittle
+    - Colleen McCullough
+    - Russell Banks
+    - Thomas C. Foster
+    - Madeleine L'Engle
+    - Patricia McCormick
+    - Carlos Castaneda
+    - Joan Aiken
+    - Thomas L. Friedman
+    - Avi    
+    - Rose Wilder Lane
+    - Sue Monk Kidd
+    - Doreen Cronin
+    - Gregory Maguire
+    - Erich Fromm
+    - Dr. Seuss
+    - William Anderson
+    - Nicholas A. Basbanes
+    - David Bradley
+    - Gabriel Garcia Marquez
+    - Peter Watson
+    - Jess Walter
+    - Robin McKinley
+    - Thomas Pynchon
+    - Karen Cushman    
+    - Terence Hanbury White
+    - Meg Cabot
+    - James Hillman
+    - Sid Fleischman
+    - Michael Crichton
+    - Michael Korda
+    - Raymond E. Feist
+    - Oscar Hijuelos
+    - Henry Miller    
+    - Elizabeth Noble
+    - Gavin Menzies
+    - Lou Marinoff
+    - Harriet Lerner
+    - Kim Stanley Robinson
+    - Mark Twain
+    - Elisabeth Elliot
+    - Richard Wright
+    - Tananarive Due
+    - Mary Stewart
+    - Francesca Lia Block
+    - Marilynne Robinson
+    - James Davidson
+    - Stuart Woods    
+    - Stanley Bing
+    - Carolyn Meyer
+    - F. Scott Fitzgerald
+    - Laura Ingalls Wilder
+    - Terry Pratchett
+    - Katherine Paterson
+    - Bernard Lewis
+    - Paul Kengor
+    - Cait London
+    - Editors of TIME For Kids
+    - Aldous Huxley
+    - Mary Kay Andrews
+    - Peter Straub
+    - Johnny Cash
+    - Robin Hobb
+    - Robert Hutchinson
+    - Tess Gerritsen
+    - Annie Proulx
+    - James Hilton
+    - Barbara Ehrenreich
+    - Carroll John Daly    
+    - Dan Simmons
+    - Kaye Gibbons    
+    - Robert M. Pirsig
+    - Lois Lenski
+    - Zecharia Sitchin
+    - Paul Bowles
+    - Marcus J. Borg
+    - Barbara Kingsolver
+    - Garth Nix
+    - Joyce Carol Oates
+    - Denis Johnson
+    - Iain Banks    
+    - Will Ferguson
+    - Louis Sachar
+    - Janet Evanovich
+    - Edward P. Jones
+    - Tony Parsons
+    - Philip Wheelwright
+    - Esther Perel
+    - Epictetus
+    - Janny Wurts
+    - Lynsay Sands
+    - Matt Ridley
+    - John O'Donohue
+    - Robin Sharma
+    - Orson Scott Card
+    - Frank McCourt
+    - Jiddu Krishnamurti
+    - Corinne Hofmann
+    - Isabel Allende
+    - Robert Cullen
+    - Kim Harrison
+    - Richard P. Martin
+    - Clarence William Anderson
+    - Marian Keyes
+    - Chip Kidd
+    - Zora Neale Hurston      
+    - Peggy Parish
+    - Amy Cotler
+    - J. R. R. Tolkien
+    - Suzanne Enoch
+    - Jorge Cruise
+    - Christopher Hitchens
+    - Armistead Maupin    
+    - Thomas Merton
+    - Bill Bryson
+    - Poppy Z. Brite
+    - Jude Fisher
+    - Bill Brittain
+    - Julie Andrews Edwards
+    - Stephen R. Donaldson    
+    - Sam Weller
+    - Diana Wynne Jones
+    - Evangeline Walton
+    - Annie Dillard
+    - John Ronald Reuel Tolkien
+    - Richard E. Neustadt
+    - Kevin Walsh
+    - Jeffrey Ford
+    - Steven Pinker
+    - William S. Burroughs
+    - Michela Wrong
+    - Isaac Asimov
+    - Marilyn Manson;Neil Strauss
+    - Philippa Gregory
+    - Jamie Lee Curtis     
+    - Neil Strauss
+    - C. S. Lewis;Pauline Baynes
+    - Joseph Gies
+    - Lee Charles Kelley
+    - Paulo Coelho;Alan R. Clarke;Moebius
+    - Wilson Rawls    
+    - Richard Shenkman
+    - John Gray
+    - Amy Tan
+    - Colin McGinn
+    - Joe Haldeman
+    - Jennifer Frantz
+    - Clive Barker
+    - Herman Melville
+    - Kuki Gallmann
+    - Jonathan Kozol
+    - Richard Powers
+    - Robert A. Johnson
+    - Peter Abrahams
+    - Elinor Mary Brent-Dyer
+    - Carl Zimmer
+    - Susan Howatch
+    - Lani Guinier
+    - Jenna Jameson;Neil Strauss
+    - Christopher Moore
+    - Hugh Honour
+    - Barry Schwartz
+    - Neil Gaiman
+    - Irvin Yalom
+    - Ray Bradbury
+    - Amy Hempel
+    - Laura Schlessinger        
+    - Lawrence Block    
+    - Jonathan Franzen
+    - Daniel Pinchbeck
+    - Joan Didion
+    - Roger Zelazny
+    - Don Wolfe
+    - John Shea    
+    - Anthony Bourdain
+    - Betty Smith
+    - Walter Dean Myers
+    - Charles Bukowski
+    - Shel Silverstein   
+    - Clive Staples Lewis
+    - Neil Gaiman;Terry Pratchett
+    - Sidney Sheldon
+    - Edith Unnerstad
+    - Jay Parini
+    - James Shapiro
+    - John Colapinto
+    - Eleanor Herman
+
+- intent: ask_book_recommendation_without_category
+  examples: |
+    - Can you recommend a book for me?
+    - What book would you suggest I read?
+    - Do you have any good book recommendations?
+    - Recommend me a book to read.
+    - I’m looking for a book. What would you recommend?
+    - Suggest a good book for me.
+    - Can you give me a book suggestion?
+    - What’s a good book to read?
+    - I need a book recommendation.
+    - Do you know any must-read books?
+    - Which book should I read next?
+
+- intent: ask_most_rated_book
+  examples: |
+    - What is the most highly-rated book?
+    - Can you tell me the top-rated book?
+    - Which book has the highest rating?
+    - What is the book with the best rating?
+    - Tell me about the book with the highest ratings.
+    - What’s the book with the most ratings?
+    - Can you recommend the highest-rated book?
+    - What’s the most popular book based on ratings?
+    - Which book is rated the highest?
+    - Which book has the best average rating?
+    - What’s the book with the highest reviews?
+    - Do you know the most highly-rated book?
+    
+
+- intent: ask_opening_hours
+  examples: |
+    - What are your opening hours?
+    - When are you open?
+    - What time does the library open?
+    - Can you tell me your working hours?
+    - Are you open on weekends?
+    - What are your working hours?
+    - When do you open and close?
+    - Is the library open on Sunday?
+    - What time do you open on Monday?
+    - When can I visit the library?
+
+- intent: ask_membership
+  examples: |
+    - How can I get a library membership?
+    - How do I become a member of the library?
+    - What is the process to get a library card?
+    - How do I register for a library membership?
+    - Can you tell me how to join the library?
+    - What are the steps to get a library membership?
+    - How do I sign up for a library membership?
+    - What do I need to do to become a library member?
+    - Is there any registration process for library membership?
+    - What documents do I need to get a library membership?    
+
+- intent: ask_about_services
+  examples: |
+    - What services do you offer?
+    - Can you tell me about the services available at the library?
+    - What can I do at the library?
+    - What services are provided here?
+    - Do you have any services for members?
+    - What are the library services?
+    - What services are available at the library?
+    - Can you tell me what I can use at the library?
+    - What facilities are available at the library?
+    - What kind of services do you provide?
+
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

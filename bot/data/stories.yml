@@ -1,0 +1,80 @@
+version: "3.1"
+
+stories:
+
+- story: Greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: ask recommendation path 1
+  steps:
+  - intent: ask_book_recommendation_without_category
+  - action: utter_recommend
+  - intent: ask_book_recommendation_with_category
+  - action: action_give_book_recommendation_with_category
+
+- story: ask recommendation path 2
+  steps:
+  - intent: ask_book_recommendation_with_category
+  - action: action_give_book_recommendation_with_category
+
+- story: ask most rated book
+  steps:
+  - intent: ask_most_rated_book
+  - action: action_give_most_rated_book
+
+- story: ask description of book
+  steps:
+  - intent: ask_description
+  - action: action_give_description
+
+- story: ask cover of book
+  steps:
+  - intent: ask_book_cover
+  - action: action_show_book_cover
+
+- story: ask for number of pages
+  steps:
+  - intent: ask_num_pages
+  - action: action_give_num_pages
+
+- story: ask for ratings
+  steps:
+  - intent: ask_ratings
+  - action: action_give_ratings
+
+- story: ask for published year
+  steps:
+  - intent: ask_published_year
+  - action: action_give_published_year
+
+- story: ask for author
+  steps:
+  - intent: ask_author
+  - action: action_give_author
+
+- story: ask for book name when author given
+  steps:
+  - intent: ask_book_by_author
+  - action: action_give_book_title
+
+- story: ask availability of book
+  steps:
+  - intent: ask_book_availability
+  - action: action_check_availability
+
+- story: ask opening hours in library
+  steps:
+  - intent: ask_opening_hours
+  - action: utter_opening_hours
+
+- story: ask about library membership
+  steps:
+  - intent: ask_membership
+  - action: utter_membership_info
+
+- story: ask about library services
+  steps:
+  - intent: ask_about_services
+  - action: utter_services

@@ -1,0 +1,83 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - ask_description
+  - ask_book_cover
+  - ask_num_pages
+  - ask_ratings
+  - ask_published_year
+  - ask_author
+  - ask_book_by_author
+  - ask_book_recommendation_without_category
+  - ask_book_recommendation_with_category
+  - ask_most_rated_book
+  - ask_book_availability
+  - ask_opening_hours
+  - ask_membership
+  - ask_about_services
+  - bot_challenge
+
+entities:
+    - book_name
+    - book_category
+    - book_author
+
+responses:
+  utter_greet:
+  - text: "Hey! I'm your library assistant. How can I help you?"
+
+  utter_recommend:
+  - text: "I'd love to recommend a book! To help me give you a more tailored suggestion, could you let me know what category you're interested in? \n
+      Theses are available categories in the library \n
+      - fiction \n
+      - non-Fiction \n 
+      - children \n 
+      - educational \n 
+      - religious \n 
+      - art \n 
+      - comics  \n
+      - poetry \n 
+      - lifestyle \n 
+      - technology \n "
+
+  utter_opening_hours:
+  - text: "We are open from 9:00 AM to 6:00 PM, Monday to Friday."
+  - text: "Our working hours are 9:00 AM to 6:00 PM on weekdays, and 10:00 AM to 4:00 PM on weekends."
+  - text: "The library is open from 9:00 AM to 6:00 PM, Monday to Friday, and 10:00 AM to 4:00 PM on Saturdays. We're closed on Sundays."
+
+  utter_membership_info:
+  - text: "To get a library membership, you need to fill out a membership form and provide a valid ID and proof of address. Once your application is approved, you will receive your library card."
+  - text: "You can register for a library membership by visiting the library or filling out an online form on our website. You'll need to provide a government-issued ID and proof of residence."
+  - text: "To join the library, simply visit us with a valid ID and proof of address, or sign up online. After registration, you will receive a library card to borrow books."
+
+  utter_services:
+  - text: "We provide a variety of services including book borrowing, e-books and audiobooks access, study rooms, computer usage, and free Wi-Fi. We also offer events like book clubs and educational workshops."
+  - text: "Our library offers book borrowing, computer and internet access, study spaces, and a collection of e-books and audiobooks. Additionally, we host community events and workshops."
+  - text: "At our library, you can borrow books, access our digital media collection, use the computers and internet, and enjoy study rooms. We also offer educational programs and activities."
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a KDU library assistant chatbot, powered by Rasa."
+
+actions:
+  - action_give_description
+  - action_show_book_cover
+  - action_give_num_pages
+  - action_give_ratings
+  - action_give_published_year
+  - action_give_author
+  - action_give_book_title
+  - action_give_most_rated_book
+  - action_give_book_recommendation_with_category
+  - action_check_availability
+  - action_nlu_fallback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
