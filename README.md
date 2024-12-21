@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ```
 rasa init
  ```
-### 6. Copy and replace files in 'bot' folder to new chatbot
+### 6. Copy and replace files in 'bot' folder into new chatbot
 ### 7. Train  chatbot using following command
 ```
 rasa train
@@ -22,7 +22,7 @@ rasa train
 
 
 # To run  chatbot in terminal
-### Run follwing command in terminal 
+### Run following commands in terminal 
 ```
 rasa shell
  ```
@@ -32,7 +32,7 @@ rasa run actions
 
 # To run  chatbot in GUI application (socketio)
 
-### 1. Run follwing command in terminal 
+### 1. Run following commands in terminal 
 ```
 rasa run -m models --enable-api --cors "*"
  ```
