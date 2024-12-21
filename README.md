@@ -1,6 +1,6 @@
 # KDU-Library-Assistant-Chatbot
-### KDU Library Assistant Chatbot using Rasa, MongoDB, HTML/CSS/JS
-### Data which use to craete database are found in 'Book.book_data.csv' in 'data' folder 
+### - KDU Library Assistant Chatbot using Rasa, MongoDB, HTML/CSS/JS.
+### - Data which use to craete database are found in 'Book.book_data.csv' in 'data' folder. 
 
 # Setup chatbot
 ### 1. Download or clone repository into your PC
