@@ -4,7 +4,7 @@
 
 # Setup chatbot
 ### 1. Download or clone repository into your PC
-### 2. Create new project and virtual environment in your IDE
+### 2. Create new project and virtual environment in your IDE (use Python 3.7)
 ### 3. Then copy 'requirements.txt' file to your project directory
 ### 4. Go to the project directory in terminal then run following command to install dependencies in project
 ```
